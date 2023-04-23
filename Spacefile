@@ -1,0 +1,25 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+  - name: story
+    src: ./story/
+    engine: custom
+    primary: true
+    commands:
+      - go build -o story
+    include:
+      - story
+    run: ./story
+    path: story
+    public: true
+
+  - name: fetcher
+    src: ./fetcher/
+    engine: custom
+    commands:
+      - go build -o fetcher
+    include:
+      - fetcher
+    run: ./fetcher
+    path: fetcher
+    public: true
